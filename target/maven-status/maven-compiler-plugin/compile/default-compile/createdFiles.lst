@@ -1,2 +1,4 @@
 base\BaseTest.class
+utils\ExtentReportManager.class
+utils\Log.class
 pages\LoginPage.class
