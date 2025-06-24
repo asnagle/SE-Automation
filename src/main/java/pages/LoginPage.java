@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 //import org.openqa.selenium.By; // To be uncommented if you don't want to use PageFactory
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +13,7 @@ import utils.Log;
 public class LoginPage {
 
 	private WebDriver driver;
-	
+
 //	======= Using PageFactory of Selenium ======
 	@FindBy(id = "Email")
 	WebElement usernameTextBox;
@@ -24,11 +26,22 @@ public class LoginPage {
 
 	@FindBy(xpath = "/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[1]")
 	WebElement loginError;
+//	
+//	@FindBy(id = "TPlCG2")
+//	WebElement HumanVerify;
 //	======= Normal method of declaration of locators =====
 //	private By usernameTextBox = By.id("Email");
 //	private By passwordTextBox = By.id("Password");
 //	private By loginButton = By.xpath("/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[3]/button");
 //	private By loginError = By.xpath("/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[1]");
+//	private By loginMessage = By.xpath("/html/head/title");
+
+//	======= Expected Error Messages=======
+	String invalidUser = "No customer account found".trim().replaceAll("\\s+", " ");
+	String invalidPassword = "The credentials provided are incorrect".trim().replaceAll("\\s+", " ");
+	String humanVerification = "Verify you are human by completing the action below.".trim().replaceAll("\\s+", " ");
+	String waitTime = "Verifying you are human. This may take a few seconds.".trim().replaceAll("\\s+", " ");
+	String SuccessLogin = "Dashboard / nopCommerce administration".trim().replaceAll("\\s+", " ");
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -59,6 +72,39 @@ public class LoginPage {
 	public String loginStatus() {
 //		WebElement errorMessage = driver.findElement(loginError);	// To be uncommented if you don't want to use PageFactory
 //		return errorMessage.getText(); // Returning the error message text // To be uncommented if you don't want to use PageFactory
+		String pageTitle = driver.getTitle();
+		System.out.println(pageTitle);
+		
+
+		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
+			return pageTitle;
+		} else
+			loginExceptions();
 		return loginError.getText();
+
+//		return loginError.getText();
+	}
+
+	public String loginExceptions() {
+		
+		try {
+		    WebElement element = driver.findElement(By.id("TPlCG2"));
+		    element.click();
+		} catch (NoSuchElementException e) {
+		    System.out.println("Element not found, skipping...");
+		    String ErrorMessage = loginError.getText();
+		    System.out.println(ErrorMessage);
+		    return ErrorMessage;
+		}
+		
+		try {
+//		    WebElement loginError = driver.findElement(By.className("message-error validation-summary-errors"));
+		    return loginError.getText();
+		} catch (NoSuchElementException e) {
+		    System.out.println("Element not found, skipping...");
+		    WebElement VerifyHuman = driver.findElement(By.id("TPlCG2"));
+		    String ErrorMessage = VerifyHuman.getText();
+		    return ErrorMessage;
+		}
 	}
 }
