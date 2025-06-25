@@ -27,7 +27,7 @@ public class LoginPage {
 	@FindBy(xpath = "/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[1]")
 	WebElement loginError;
 //	
-//	@FindBy(id = "TPlCG2")
+//	@FindBy(id = "xEqtR4")
 //	WebElement HumanVerify;
 //	======= Normal method of declaration of locators =====
 //	private By usernameTextBox = By.id("Email");
@@ -70,41 +70,41 @@ public class LoginPage {
 
 	// Method to return login error message
 	public String loginStatus() {
-//		WebElement errorMessage = driver.findElement(loginError);	// To be uncommented if you don't want to use PageFactory
-//		return errorMessage.getText(); // Returning the error message text // To be uncommented if you don't want to use PageFactory
 		String pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		
 
 		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
 			return pageTitle;
+		} else if ("Just a moment...".equals(pageTitle) ||"nopCommerce demo store. Login".equals(pageTitle)) {
+			return loginExceptions();
 		} else
-			loginExceptions();
-		return loginError.getText();
-
-//		return loginError.getText();
+			return pageTitle;
+		
 	}
 
 	public String loginExceptions() {
-		
+
 		try {
-		    WebElement element = driver.findElement(By.id("TPlCG2"));
-		    element.click();
+			WebElement element = driver.findElement(By.id("xEqtR4"));
+			element.getText();
+			System.out.println("Human Verification Required... " + element.getText());
+			String ErrorMessage = element.getText();
+			return ErrorMessage;
 		} catch (NoSuchElementException e) {
-		    System.out.println("Element not found, skipping...");
-		    String ErrorMessage = loginError.getText();
-		    System.out.println(ErrorMessage);
-		    return ErrorMessage;
+			System.out.println("Human Verification Element not found, skipping...");
+			try {
+	            String fallbackMessage = loginError.getText();
+	            System.out.println("Fallback message: " + fallbackMessage);
+	            return fallbackMessage;
+	        } catch (NoSuchElementException ex2) {
+	        	System.out.println("Element not found, skipping...");
+				WebElement VerifyHuman = driver.findElement(By.id("xEqtR4"));
+				String ErrorMessage = VerifyHuman.getText();
+				return ErrorMessage;
+	        }
+
 		}
+
 		
-		try {
-//		    WebElement loginError = driver.findElement(By.className("message-error validation-summary-errors"));
-		    return loginError.getText();
-		} catch (NoSuchElementException e) {
-		    System.out.println("Element not found, skipping...");
-		    WebElement VerifyHuman = driver.findElement(By.id("TPlCG2"));
-		    String ErrorMessage = VerifyHuman.getText();
-		    return ErrorMessage;
-		}
 	}
 }
