@@ -9,7 +9,7 @@
           <include name="teardownReport"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="invalidLogin" invocation-numbers="0"/>
+          <include name="validLogin"/>
         </methods>
       </class> <!-- tests.LoginTests -->
     </classes>

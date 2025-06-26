@@ -3,7 +3,6 @@ package utils;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,49 +12,48 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReportManager {
-	
+
 	private static ExtentReports extentrep;
 	private static ExtentTest testrep;
-	
-	public static String repPath;
-	
+
+	public static String reportPath;
+
 	public static ExtentReports getReportInstance() {
-		
-		if(extentrep == null) {
-			
+
+		if (extentrep == null) {
+
 			String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-			repPath = "reports/ExtentReport_"+timestamp+".html";
-			
-			ExtentSparkReporter reporter = new ExtentSparkReporter(repPath);
+			reportPath = "reports/ExtentReport_" + timestamp + ".html";
+
+			ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
 			reporter.config().setDocumentTitle("Test Report of nopcommerce.com site");
 			reporter.config().setReportName("Automated Test Execution Report");
-			
+
 			extentrep = new ExtentReports();
 			extentrep.attachReporter(reporter);
-			
+
 		}
 		return extentrep;
 	}
-	
+
 	public static ExtentTest createTest(String TestName) {
-		
+
 		testrep = getReportInstance().createTest(TestName);
 		return testrep;
-		
+
 	}
-	
+
 	public static String captureScreenShot(WebDriver driver, String screenshotName) {
-		
+
 		String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		
+
 		try {
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String path = System.getProperty("user.dir")+"/screenshots/"+screenshotName+"+"+timestamp+".png";
-			System.out.println("Path for Screenshot is: "+path);
+			String path = System.getProperty("user.dir") + "/screenshots/" + screenshotName + "+" + timestamp + ".png";
+			System.out.println("Path for Screenshot is: " + path);
 			FileUtils.copyFile(src, new File(path));
 			return path;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}

@@ -1,5 +1,6 @@
 package base;
 
+import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -10,6 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import utils.EmailUtils;
 import utils.ExtentReportManager;
 import utils.Log;
 
@@ -27,8 +29,14 @@ public class BaseTest {
 
 	@AfterSuite
 	public static void teardownReport() {
-
-		extentRep.flush();
+		try {
+			extentRep.flush();
+			File fullPath = new File(ExtentReportManager.reportPath);
+			String reportFolder = fullPath.getParent();
+			EmailUtils.sendTestReport(reportFolder);
+		} catch (Exception e) {
+			System.err.println("Flush failed: " + e.getMessage());
+		}
 
 	}
 

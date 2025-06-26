@@ -75,11 +75,11 @@ public class LoginPage {
 
 		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
 			return pageTitle;
-		} else if ("Just a moment...".equals(pageTitle) ||"nopCommerce demo store. Login".equals(pageTitle)) {
+		} else if ("Just a moment...".equals(pageTitle) || "nopCommerce demo store. Login".equals(pageTitle)) {
 			return loginExceptions();
 		} else
 			return pageTitle;
-		
+
 	}
 
 	public String loginExceptions() {
@@ -93,18 +93,17 @@ public class LoginPage {
 		} catch (NoSuchElementException e) {
 			System.out.println("Human Verification Element not found, skipping...");
 			try {
-	            String fallbackMessage = loginError.getText();
-	            System.out.println("Fallback message: " + fallbackMessage);
-	            return fallbackMessage;
-	        } catch (NoSuchElementException ex2) {
-	        	System.out.println("Element not found, skipping...");
+				String fallbackMessage = loginError.getText();
+				System.out.println("Fallback message: " + fallbackMessage);
+				return fallbackMessage;
+			} catch (NoSuchElementException ex2) {
+				System.out.println("Element not found, skipping...");
 				WebElement VerifyHuman = driver.findElement(By.id("xEqtR4"));
 				String ErrorMessage = VerifyHuman.getText();
 				return ErrorMessage;
-	        }
+			}
 
 		}
 
-		
 	}
 }
