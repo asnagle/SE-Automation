@@ -13,8 +13,8 @@ import utils.Log;
 public class LoginTests extends BaseTest {
 
 //	Get Login credentials from Excel file
-	@DataProvider(name = "LoginData")
-	public Object[][] getLoginCredentials() throws IOException {
+	@DataProvider(name = "ValidLoginData")
+	public Object[][] getValidLoginCredentials() throws IOException {
 
 		String srcFile = System.getProperty("user.dir") + "/TestData/testdata.xlsx";
 		ExcelUtils.loadExcel(srcFile, "Sheet1");
@@ -31,6 +31,23 @@ public class LoginTests extends BaseTest {
 		return data;
 	}
 
+	@DataProvider(name = "InValidLoginData")
+	public Object[][] getInValidLoginCredentials() throws IOException {
+
+		String srcFile = System.getProperty("user.dir") + "/TestData/testdata.xlsx";
+		ExcelUtils.loadExcel(srcFile, "Sheet2");
+		int rowCount = ExcelUtils.getRowCount();
+		Object[][] data = new Object[rowCount - 1][2];
+
+		for (int i = 1; i < rowCount; i++) {
+
+			data[i - 1][0] = ExcelUtils.getCellData(i, 0); // Gets Username
+			data[i - 1][1] = ExcelUtils.getCellData(i, 1); // Gets Password
+
+		}
+		ExcelUtils.closeExcel();
+		return data;
+	}
 //	============= Example of how to get data from different Data Provider =================
 
 	@DataProvider(name = "LoginData2")
@@ -49,7 +66,7 @@ public class LoginTests extends BaseTest {
 
 //=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 1, dataProvider = "LoginData") // Uncomment to use data from
+	@Test(priority = 1, dataProvider = "ValidLoginData") // Uncomment to use data from
 	public void validLogin(String username, String password) {
 
 		Log.info("Starting to test Login with Valid Credentials...");
@@ -227,7 +244,7 @@ public class LoginTests extends BaseTest {
 
 //	=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 2, dataProvider = "LoginData")
+	@Test(priority = 2, dataProvider = "InValidLoginData")
 	public void invalidLogin(String username, String password) {
 
 		Log.info("Starting to test Login with Valid Credentials...");
