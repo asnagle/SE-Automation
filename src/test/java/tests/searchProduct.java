@@ -1,0 +1,59 @@
+package tests;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import utils.getSiteResponse;
+import base.BaseTest;
+import pages.LoginPage;
+import pages.DashBoard;
+import utils.ExtentReportManager;
+import utils.Log;
+import utils.ValidateProductSearch;
+
+public class searchProduct extends BaseTest {
+
+//	=============== Static Credential Provider ======
+	@DataProvider(name = "Credentials")
+	public Object[][] getTestData() {
+
+		return new Object[][] { { "admin@yourstore.com", "admin" } };
+	}
+
+	@Test(priority = 1, dataProvider = "Credentials")
+	public void accessDashboard(String username, String password) {
+		Log.info("Starting to Login with Valid Credentials...");
+		testrep = ExtentReportManager.createTest("Search Product by Name");
+		LoginPage loginPage = new LoginPage(driver);
+		DashBoard dashboard = new DashBoard(driver);
+		
+		Log.info("Providing Credentials..");
+		testrep.info("Providing Credentials...");
+		loginPage.enterUsername(username);
+		loginPage.enterPassword(password);
+		testrep.info("Clicking on Login Button");
+		loginPage.clickLogin();
+		System.out.println("Title is: " + driver.getTitle());
+		String pageTitle = driver.getTitle();
+		String ADMIN_TITLE = "Dashboard / nopCommerce administration";
+		String actualMsg = loginPage.loginStatus().trim().replaceAll("\\s+", " ");
+//		String Products = dashboard.productList().trim().replaceAll("\\s+"," ");
+		
+
+		getSiteResponse.validateLogin(driver, actualMsg, testrep);
+		System.out.println(actualMsg);
+		if (ADMIN_TITLE.equals(pageTitle) && actualMsg.equals(ADMIN_TITLE)) {
+			String product = "Nikon D5500 DSLR";
+			dashboard.clickcatalog();
+			dashboard.clickproducts();
+			dashboard.searchproductByName(product);
+			dashboard.searchButton();
+//			dashboard.productList();
+			ValidateProductSearch.productsFound(driver, actualMsg, testrep);
+        } else {
+//        	System.out.println("Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
+            testrep.fail("Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
+        }
+
+	}
+
+}

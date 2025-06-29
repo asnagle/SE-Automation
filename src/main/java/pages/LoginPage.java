@@ -1,5 +1,6 @@
 package pages;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 //import org.openqa.selenium.By; // To be uncommented if you don't want to use PageFactory
@@ -26,6 +27,7 @@ public class LoginPage {
 
 	@FindBy(xpath = "/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[1]")
 	WebElement loginError;
+
 //	
 //	@FindBy(id = "xEqtR4")
 //	WebElement HumanVerify;
@@ -106,4 +108,6 @@ public class LoginPage {
 		}
 
 	}
+	
+	
 }

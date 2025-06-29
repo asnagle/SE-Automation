@@ -9,6 +9,7 @@ import pages.LoginPage;
 import utils.ExcelUtils;
 import utils.ExtentReportManager;
 import utils.Log;
+import utils.getSiteResponse;
 
 public class LoginTests extends BaseTest {
 
@@ -66,7 +67,7 @@ public class LoginTests extends BaseTest {
 
 //=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 1, dataProvider = "ValidLoginData") // Uncomment to use data from
+	@Test(priority = 1, dataProvider = "LoginData2") // Uncomment to use data from
 	public void validLogin(String username, String password) {
 
 		Log.info("Starting to test Login with Valid Credentials...");
@@ -87,95 +88,100 @@ public class LoginTests extends BaseTest {
 
 //		======= Expected Error Messages=======
 		String actualMsg = loginPage.loginStatus().trim().replaceAll("\\s+", " ");
-		String invalidUser = "Login was unsuccessful. Please correct the errors and try again. No customer account found"
-				.trim().replaceAll("\\s+", " ");
-		String invalidPassword = "Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect"
-				.trim().replaceAll("\\s+", " ");
-		String humanVerification = "Verify you are human by completing the action below.".trim().replaceAll("\\s+",
-				" ");
-		String waitTime = "Verifying you are human. This may take a few seconds.".trim().replaceAll("\\s+", " ");
+//		String invalidUser = "Login was unsuccessful. Please correct the errors and try again. No customer account found"
+//				.trim().replaceAll("\\s+", " ");
+//		String invalidPassword = "Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect"
+//				.trim().replaceAll("\\s+", " ");
+//		String humanVerification = "Verify you are human by completing the action below.".trim().replaceAll("\\s+",
+//				" ");
+//		String waitTime = "Verifying you are human. This may take a few seconds.".trim().replaceAll("\\s+", " ");
 
 		System.out.println(actualMsg);
 		String pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
+
+//		=================== Old Validation Code =====================
+//		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
+////			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass("Login Successful");
+//		}
+//		if ("Just a moment...".equals(pageTitle) && invalidUser.isEmpty()) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info(driver.getTitle());
+//			Log.info("Test completed Successfully ");
+//			testrep.pass("Login Successful");
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(humanVerification)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(waitTime)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("User Account does not Exist...");
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidUser);
+//			Assert.fail("Test failed due to Invalid Username/Account.");
+//			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Incorrect Password Entered...");
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidPassword);
+//			Assert.fail("Test failed due to Invalid Password.");
+//			throw new AssertionError("Marking test as failed due to Invalid Password");
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && invalidUser.isEmpty()) {
 //			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
-			Log.info("Test completed Successfully ");
-			testrep.pass("Login Successful");
-		}
-		if ("Just a moment...".equals(pageTitle) && invalidUser.isEmpty()) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info(driver.getTitle());
-			Log.info("Test completed Successfully ");
-			testrep.pass("Login Successful");
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(humanVerification)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(waitTime)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("User Account does not Exist...");
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidUser);
-			Assert.fail("Test failed due to Invalid Username/Account.");
-			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Incorrect Password Entered...");
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidPassword);
-			Assert.fail("Test failed due to Invalid Password.");
-			throw new AssertionError("Marking test as failed due to Invalid Password");
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && invalidUser.isEmpty()) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info(invalidUser);
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidUser);
-			Assert.fail("Test failed due to Invalid Username/Account.");
-			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info(invalidUser);
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidUser);
-			Assert.fail("Test failed due to Invalid Username/Account.");
-			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info(invalidPassword);
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidPassword);
-			Assert.fail("Test failed due to Invalid Password.");
-			throw new AssertionError("Marking test as failed due to Invalid Password");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info(invalidPassword);
-			Log.info("Test completed Successfully ");
-			testrep.fail(invalidPassword);
-			Assert.fail("Test failed due to Invalid Password.");
-			throw new AssertionError("Marking test as failed due to Invalid Password");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)
-				&& actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info(invalidUser + invalidPassword);
-			Log.info("Test completed Successfully ");
-			testrep.fail("Invalid Credentials..." + invalidUser + invalidPassword);
-			Assert.fail("Test failed due to Invalid Password.");
-			throw new AssertionError("Marking test as failed due to Invalid Password");
-		}
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Log.info(invalidUser);
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidUser);
+//			Assert.fail("Test failed due to Invalid Username/Account.");
+//			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info(invalidUser);
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidUser);
+//			Assert.fail("Test failed due to Invalid Username/Account.");
+//			throw new AssertionError("Marking test as failed due to Invalid Username/Account");
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Log.info(invalidPassword);
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidPassword);
+//			Assert.fail("Test failed due to Invalid Password.");
+//			throw new AssertionError("Marking test as failed due to Invalid Password");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info(invalidPassword);
+//			Log.info("Test completed Successfully ");
+//			testrep.fail(invalidPassword);
+//			Assert.fail("Test failed due to Invalid Password.");
+//			throw new AssertionError("Marking test as failed due to Invalid Password");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)
+//				&& actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info(invalidUser + invalidPassword);
+//			Log.info("Test completed Successfully ");
+//			testrep.fail("Invalid Credentials..." + invalidUser + invalidPassword);
+//			Assert.fail("Test failed due to Invalid Password.");
+//			throw new AssertionError("Marking test as failed due to Invalid Password");
+
+//		=======================================================================
+		getSiteResponse.validateLogin(driver, actualMsg, testrep);
 	}
+//	}
 
 //	================ Following Code uses hardcoded values for username & password =========
 //	@Test(priority = 1)
@@ -244,7 +250,7 @@ public class LoginTests extends BaseTest {
 
 //	=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 2, dataProvider = "InValidLoginData")
+	@Test(priority = 2, dataProvider = "LoginData2")
 	public void invalidLogin(String username, String password) {
 
 		Log.info("Starting to test Login with Valid Credentials...");
@@ -263,7 +269,10 @@ public class LoginTests extends BaseTest {
 		loginPage.clickLogin();
 		System.out.println("Title is: " + driver.getTitle());
 
-//		======= Expected Error Messages=======
+//		======= Expected Titles & Error Messages=======
+		String ADMIN_TITLE = "Dashboard / nopCommerce administration";
+		String WAIT_TITLE = "Just a moment...";
+		String LOGIN_TITLE = "nopCommerce demo store. Login";
 		String actualMsg = loginPage.loginStatus().trim().replaceAll("\\s+", " ");
 		String invalidUser = "Login was unsuccessful. Please correct the errors and try again. No customer account found"
 				.trim().replaceAll("\\s+", " ");
@@ -276,80 +285,105 @@ public class LoginTests extends BaseTest {
 		System.out.println(actualMsg);
 		String pageTitle = driver.getTitle();
 		System.out.println(pageTitle);
-		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
+
+//		============================= Old Validation Code =============================
+//		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
+////			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
+//			Log.info("Test completed Successfully ");
+//			testrep.fail("Valid Credentials Entered..");
+//			Assert.fail("Test failed due to Valid Credentials.");
+//			throw new AssertionError("Marking test as failed due to Valid Credentials..");
+//		}
+//		if ("Just a moment...".equals(pageTitle) && invalidUser.isEmpty()) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info(driver.getTitle());
+//			Log.info("Test completed Successfully ");
+//			testrep.fail("Valid Credentials Entered..");
+//			Assert.fail("Test failed due to Valid Credentials.");
+//			throw new AssertionError("Marking test as failed due to Valid Credentials..");
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(humanVerification)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(waitTime)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("User Account does not Exist...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass("Login failed as expected...");
+//			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
+//		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "Just a moment...");
+//			Log.info("Incorrect Password Entered...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass(invalidPassword);
+//			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && invalidUser.isEmpty()) {
 //			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
+//			Log.info("Need user intervention: " + humanVerification);
+//			Log.info("Test completed Successfully ");
+//			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Log.info("User Account does not Exist...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass(invalidUser);
+//			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info("User Account does not Exist...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass(invalidUser);
+//			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
+//		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Log.info("Incorrect Password Entered...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass(invalidPassword);
+//			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info("Incorrect Password Entered...");
+//			Log.info("Test completed Successfully ");
+//			testrep.pass(invalidPassword);
+//			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
+//		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)
+//				&& actualMsg.equals(invalidUser)) {
+//			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
+//			Log.info(invalidUser + invalidPassword);
+//			Log.info("Test completed Successfully ");
+//			testrep.pass("Invalid Credentials..." + invalidUser + invalidPassword);
+//			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
+//		=========================================================================
+		if (ADMIN_TITLE.equals(pageTitle) && actualMsg.equals(ADMIN_TITLE)) {
+//           testrep.pass("Login Successful");
 			Log.info("Test completed Successfully ");
 			testrep.fail("Valid Credentials Entered..");
 			Assert.fail("Test failed due to Valid Credentials.");
-			throw new AssertionError("Marking test as failed due to Valid Credentials..");
-		}
-		if ("Just a moment...".equals(pageTitle) && invalidUser.isEmpty()) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info(driver.getTitle());
-			Log.info("Test completed Successfully ");
-			testrep.fail("Valid Credentials Entered..");
-			Assert.fail("Test failed due to Valid Credentials.");
-			throw new AssertionError("Marking test as failed due to Valid Credentials..");
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(humanVerification)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(waitTime)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("User Account does not Exist...");
-			Log.info("Test completed Successfully ");
-			testrep.pass("Login failed as expected...");
-			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
-		} else if ("Just a moment...".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "Just a moment...");
-			Log.info("Incorrect Password Entered...");
-			Log.info("Test completed Successfully ");
-			testrep.pass(invalidPassword);
-			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && invalidUser.isEmpty()) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info("Need user intervention: " + humanVerification);
-			Log.info("Test completed Successfully ");
-			testrep.warning("Need User intervention: " + "Re-run the test manually.." + humanVerification);
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info("User Account does not Exist...");
-			Log.info("Test completed Successfully ");
-			testrep.pass(invalidUser);
-			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info("User Account does not Exist...");
-			Log.info("Test completed Successfully ");
-			testrep.pass(invalidUser);
-			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
-		} else if ("Dashboard / nopCommerce administration".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
-			Log.info("Incorrect Password Entered...");
-			Log.info("Test completed Successfully ");
-			testrep.pass(invalidPassword);
-			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info("Incorrect Password Entered...");
-			Log.info("Test completed Successfully ");
-			testrep.pass(invalidPassword);
-			Assert.assertEquals(actualMsg, invalidPassword, "Test PASSED");
-		} else if ("nopCommerce demo store. Login".equals(pageTitle) && actualMsg.equals(invalidPassword)
+		} else if (WAIT_TITLE.equals(pageTitle) && actualMsg.equals(humanVerification)) {
+			testrep.warning("Bot verification required: " + humanVerification);
+		} else if (WAIT_TITLE.equals(pageTitle) && actualMsg.equals(waitTime)) {
+			testrep.warning("Bot verification in progress: " + waitTime);
+		} else if ((WAIT_TITLE.equals(pageTitle) || LOGIN_TITLE.equals(pageTitle) || ADMIN_TITLE.equals(pageTitle))
 				&& actualMsg.equals(invalidUser)) {
-			Assert.assertEquals(driver.getTitle(), "nopCommerce demo store. Login");
-			Log.info(invalidUser + invalidPassword);
 			Log.info("Test completed Successfully ");
-			testrep.pass("Invalid Credentials..." + invalidUser + invalidPassword);
-			Assert.assertEquals(actualMsg, invalidUser, "Test PASSED");
+			testrep.pass("Invalid username: " + invalidUser);
+			Log.info("Expected login to fail due to Invalid Username/Account.");
+		} else if ((WAIT_TITLE.equals(pageTitle) || LOGIN_TITLE.equals(pageTitle) || ADMIN_TITLE.equals(pageTitle))
+				&& actualMsg.equals(invalidPassword)) {
+			Log.info("Test completed Successfully ");
+			testrep.pass("Invalid password: " + invalidPassword);
+			Log.info("Expected login to fail due to Invalid Password.");
+		} else {
+			testrep.warning("Unrecognized login result. Manual check may be required.");
 		}
+
 	}
 
 }

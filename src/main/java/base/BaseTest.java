@@ -1,8 +1,8 @@
 package base;
-
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -45,6 +45,7 @@ public class BaseTest {
 
 		Log.info("Starting Web Browser...");
 		driver = new ChromeDriver();
+//		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		Log.info("Navigating to URL...");
 		driver.get("https://admin-demo.nopcommerce.com/login");
