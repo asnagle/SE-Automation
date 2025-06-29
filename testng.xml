@@ -1,10 +1,14 @@
 <suite name="LoginSuite">
 	<test name="LoginTests">
-	<!--Passing parameters to test classes through testng.xml-->
-<!--	<parameter name = "username" value = "puser1"/>-->
-<!--	<parameter name = "password" value = "password4"/>-->
+		<!--Passing parameters to test classes through testng.xml-->
+		<!--	<parameter name = "username" value = "puser1"/>-->
+		<!--	<parameter name = "password" value = "password4"/>-->
 		<classes>
 			<class name="tests.LoginTests" />
+		</classes>
+	</test>
+	<test name="searchProduct">
+		<classes>
 			<class name="tests.searchProduct" />
 		</classes>
 	</test>
