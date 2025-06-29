@@ -67,7 +67,7 @@ public class LoginTests extends BaseTest {
 
 //=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 1, dataProvider = "LoginData2") // Uncomment to use data from
+	@Test(priority = 1, dataProvider = "ValidLoginData") // Uncomment to use data from
 	public void validLogin(String username, String password) {
 
 		Log.info("Starting to test Login with Valid Credentials...");
@@ -250,10 +250,10 @@ public class LoginTests extends BaseTest {
 
 //	=============== Following code reads Login Credentials from Excel files and provides as input value for the Username & Password Credentials
 
-	@Test(priority = 2, dataProvider = "LoginData2")
+	@Test(priority = 2, dataProvider = "InValidLoginData")
 	public void invalidLogin(String username, String password) {
 
-		Log.info("Starting to test Login with Valid Credentials...");
+		Log.info("Starting to test Login with Invalid Credentials...");
 
 		testrep = ExtentReportManager.createTest("Login with Invalid credentials Test");
 

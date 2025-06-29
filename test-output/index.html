@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-LoginSuite" class="navigator-link">
-              <span class="suite-name border-passed">LoginSuite</span>
+              <span class="suite-name border-failed">LoginSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods,   9 passed</span>
+                    <span class="method-stats">9 methods, 1 failed,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-LoginSuite" class="hide-methods failed suite-LoginSuite"> (hide)</a> <!-- hide-methods failed suite-LoginSuite -->
+                      <a href="#" panel-name="suite-LoginSuite" class="show-methods failed suite-LoginSuite"> (show)</a> <!-- show-methods failed suite-LoginSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-LoginSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.searchProduct" class="method navigator-link" hash-for-method="accessDashboard(admin@yourstore.com, admin)">accessDashboard(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-LoginSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,32 +117,22 @@
                     <div class="method-list-content passed suite-LoginSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.searchProduct" class="method navigator-link" hash-for-method="accessDashboard(admin@yourstore.com, admin)">accessDashboard(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(admin@yourstore.com, pass124)">invalidLogin(admin@yourstore.com, pass124)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(admin@yourstore.com, admin)">invalidLogin(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(user2@test.com, pass126)">invalidLogin(user2@test.com, pass126)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(admin@yourstore.com, dpass2)">invalidLogin(admin@yourstore.com, dpass2)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(user1@test.com, admin)">invalidLogin(user1@test.com, admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(duser3@test.com, dpass3)">invalidLogin(duser3@test.com, dpass3)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(duser1@test.com, admin)">invalidLogin(duser1@test.com, admin)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(duser3@test.com, dpass3)">validLogin(duser3@test.com, dpass3)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="invalidLogin(user3@test.com, pass321)">invalidLogin(user3@test.com, pass321)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,12 +142,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(admin@yourstore.com, dpass2)">validLogin(admin@yourstore.com, dpass2)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(admin@yourstore.com, admin)">validLogin(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(duser1@test.com, admin)">validLogin(duser1@test.com, admin)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(admin@yourstore.com, admin)">validLogin(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-LoginSuite" title="tests.LoginTests" class="method navigator-link" hash-for-method="validLogin(admin@yourstore.com, admin)">validLogin(admin@yourstore.com, admin)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-LoginSuite -->
@@ -158,9 +167,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-LoginSuite" class="panel LoginSuite">
-          <div class="suite-LoginSuite-class-passed">
+          <div class="suite-LoginSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">tests.searchProduct</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -170,10 +179,33 @@
                   </a> <!-- accessDashboard(admin@yourstore.com, admin) -->
                   <span class="method-name">accessDashboard</span>
                   <span class="parameters">(admin@yourstore.com,admin)</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;p&gt;...&lt;/p&gt; is not clickable at point (92, 135). Other element would receive the click: &lt;div id=&quot;loadCustomerStatisticsAlert-action-alert&quot; class=&quot;modal fade show&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;loadCustomerStatisticsAlert-action-alert-title&quot; aria-modal=&quot;true&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=137.0.7151.120)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1823fd06239ec557d3552822e9d158ab, clickElement {id=f.08F2E52E726A67E817EC821762CB2F6E.d.FAA318ADCA01190412CFBB797CFC1AAB.e.64}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55582}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55582/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (1823fd06239ec557d3552822e9d158ab)] -&gt; css selector: li.nav-item &gt; a.nav-link &gt; p]
+Session ID: 1823fd06239ec557d3552822e9d158ab
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at pages.DashBoard.clickproducts(DashBoard.java:75)
+	at tests.searchProduct.accessDashboard(searchProduct.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-LoginSuite-class-passed -->
+          </div> <!-- suite-LoginSuite-class-failed -->
           <div class="suite-LoginSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -182,42 +214,34 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="invalidLogin(admin@yourstore.com, admin)">
-                  </a> <!-- invalidLogin(admin@yourstore.com, admin) -->
+                  <a name="invalidLogin(admin@yourstore.com, pass124)">
+                  </a> <!-- invalidLogin(admin@yourstore.com, pass124) -->
                   <span class="method-name">invalidLogin</span>
-                  <span class="parameters">(admin@yourstore.com,admin)</span>
+                  <span class="parameters">(admin@yourstore.com,pass124)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="invalidLogin(admin@yourstore.com, dpass2)">
-                  </a> <!-- invalidLogin(admin@yourstore.com, dpass2) -->
+                  <a name="invalidLogin(user2@test.com, pass126)">
+                  </a> <!-- invalidLogin(user2@test.com, pass126) -->
                   <span class="method-name">invalidLogin</span>
-                  <span class="parameters">(admin@yourstore.com,dpass2)</span>
+                  <span class="parameters">(user2@test.com,pass126)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="invalidLogin(duser3@test.com, dpass3)">
-                  </a> <!-- invalidLogin(duser3@test.com, dpass3) -->
+                  <a name="invalidLogin(user1@test.com, admin)">
+                  </a> <!-- invalidLogin(user1@test.com, admin) -->
                   <span class="method-name">invalidLogin</span>
-                  <span class="parameters">(duser3@test.com,dpass3)</span>
+                  <span class="parameters">(user1@test.com,admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="invalidLogin(duser1@test.com, admin)">
-                  </a> <!-- invalidLogin(duser1@test.com, admin) -->
+                  <a name="invalidLogin(user3@test.com, pass321)">
+                  </a> <!-- invalidLogin(user3@test.com, pass321) -->
                   <span class="method-name">invalidLogin</span>
-                  <span class="parameters">(duser1@test.com,admin)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="validLogin(duser3@test.com, dpass3)">
-                  </a> <!-- validLogin(duser3@test.com, dpass3) -->
-                  <span class="method-name">validLogin</span>
-                  <span class="parameters">(duser3@test.com,dpass3)</span>
+                  <span class="parameters">(user3@test.com,pass321)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -230,18 +254,26 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validLogin(admin@yourstore.com, dpass2)">
-                  </a> <!-- validLogin(admin@yourstore.com, dpass2) -->
+                  <a name="validLogin(admin@yourstore.com, admin)">
+                  </a> <!-- validLogin(admin@yourstore.com, admin) -->
                   <span class="method-name">validLogin</span>
-                  <span class="parameters">(admin@yourstore.com,dpass2)</span>
+                  <span class="parameters">(admin@yourstore.com,admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="validLogin(duser1@test.com, admin)">
-                  </a> <!-- validLogin(duser1@test.com, admin) -->
+                  <a name="validLogin(admin@yourstore.com, admin)">
+                  </a> <!-- validLogin(admin@yourstore.com, admin) -->
                   <span class="method-name">validLogin</span>
-                  <span class="parameters">(duser1@test.com,admin)</span>
+                  <span class="parameters">(admin@yourstore.com,admin)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validLogin(admin@yourstore.com, admin)">
+                  </a> <!-- validLogin(admin@yourstore.com, admin) -->
+                  <span class="method-name">validLogin</span>
+                  <span class="parameters">(admin@yourstore.com,admin)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -308,46 +340,46 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'accessDashboard')
-data.setCell(0, 2, 'tests.searchProduct')
-data.setCell(0, 3, 10057);
+data.setCell(0, 1, 'validLogin')
+data.setCell(0, 2, 'tests.LoginTests')
+data.setCell(0, 3, 152515);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'validLogin')
-data.setCell(1, 2, 'tests.LoginTests')
-data.setCell(1, 3, 7818);
+data.setCell(1, 1, 'accessDashboard')
+data.setCell(1, 2, 'tests.searchProduct')
+data.setCell(1, 3, 35491);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'invalidLogin')
+data.setCell(2, 1, 'validLogin')
 data.setCell(2, 2, 'tests.LoginTests')
-data.setCell(2, 3, 6016);
+data.setCell(2, 3, 23151);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'invalidLogin')
+data.setCell(3, 1, 'validLogin')
 data.setCell(3, 2, 'tests.LoginTests')
-data.setCell(3, 3, 5219);
+data.setCell(3, 3, 19059);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'validLogin')
 data.setCell(4, 2, 'tests.LoginTests')
-data.setCell(4, 3, 4086);
+data.setCell(4, 3, 10489);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'invalidLogin')
 data.setCell(5, 2, 'tests.LoginTests')
-data.setCell(5, 3, 2171);
+data.setCell(5, 3, 1953);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'validLogin')
+data.setCell(6, 1, 'invalidLogin')
 data.setCell(6, 2, 'tests.LoginTests')
-data.setCell(6, 3, 1937);
+data.setCell(6, 3, 1719);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'validLogin')
+data.setCell(7, 1, 'invalidLogin')
 data.setCell(7, 2, 'tests.LoginTests')
-data.setCell(7, 3, 1139);
+data.setCell(7, 3, 1680);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'invalidLogin')
 data.setCell(8, 2, 'tests.LoginTests')
-data.setCell(8, 3, 973);
+data.setCell(8, 3, 1548);
 window.suiteTableData['LoginSuite']= { tableData: data, tableDiv: 'times-div-LoginSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 39 seconds</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-LoginSuite">
               </div> <!-- times-div-LoginSuite -->
             </div> <!-- times-div -->
@@ -383,118 +415,120 @@ return data;
               <div class="chronological-class-name">tests.LoginTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">255 ms</span>
+                <span class="method-start">1126 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">validLogin(admin@yourstore.com, admin)</span>
-                <span class="method-start">4797 ms</span>
+                <span class="method-start">8329 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.S...)</span>
-                <span class="method-start">6736 ms</span>
+                <span class="method-start">27389 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">6913 ms</span>
+                <span class="method-start">27595 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validLogin(duser1@test.com, admin)</span>
-                <span class="method-start">9744 ms</span>
+                <span class="method-name">validLogin(admin@yourstore.com, admin)</span>
+                <span class="method-start">47858 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.S...)</span>
-                <span class="method-start">10884 ms</span>
+                <span class="method-start">58347 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">11049 ms</span>
+                <span class="method-start">58502 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validLogin(admin@yourstore.com, dpass2)</span>
-                <span class="method-start">13038 ms</span>
+                <span class="method-name">validLogin(admin@yourstore.com, admin)</span>
+                <span class="method-start">63001 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.S...)</span>
-                <span class="method-start">20856 ms</span>
+                <span class="method-start">215519 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">21050 ms</span>
+                <span class="method-start">215703 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">validLogin(duser3@test.com, dpass3)</span>
-                <span class="method-start">23803 ms</span>
+                <span class="method-name">validLogin(admin@yourstore.com, admin)</span>
+                <span class="method-start">219441 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.S...)</span>
-                <span class="method-start">27895 ms</span>
+                <span class="method-start">242595 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">28050 ms</span>
+                <span class="method-start">242819 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">invalidLogin(admin@yourstore.com, admin)</span>
-                <span class="method-start">30114 ms</span>
+                <span class="method-name">invalidLogin(admin@yourstore.com, pass124)</span>
+                <span class="method-start">245522 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.la...)</span>
-                <span class="method-start">36130 ms</span>
+                <span class="method-start">247475 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">36269 ms</span>
+                <span class="method-start">247657 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">invalidLogin(duser1@test.com, admin)</span>
-                <span class="method-start">41552 ms</span>
+                <span class="method-name">invalidLogin(user1@test.com, admin)</span>
+                <span class="method-start">251449 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.la...)</span>
-                <span class="method-start">46771 ms</span>
+                <span class="method-start">252998 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">46933 ms</span>
+                <span class="method-start">253143 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">invalidLogin(admin@yourstore.com, dpass2)</span>
-                <span class="method-start">49651 ms</span>
+                <span class="method-name">invalidLogin(user2@test.com, pass126)</span>
+                <span class="method-start">256066 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.la...)</span>
-                <span class="method-start">50624 ms</span>
+                <span class="method-start">257787 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">50780 ms</span>
+                <span class="method-start">257931 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">invalidLogin(duser3@test.com, dpass3)</span>
-                <span class="method-start">53538 ms</span>
+                <span class="method-name">invalidLogin(user3@test.com, pass321)</span>
+                <span class="method-start">261090 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.la...)</span>
-                <span class="method-start">55710 ms</span>
+                <span class="method-start">262771 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.searchProduct</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">55896 ms</span>
+                <span class="method-start">262959 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">accessDashboard(admin@yourstore.com, admin)</span>
-                <span class="method-start">58485 ms</span>
+                <span class="method-start">266576 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=accessDashboard status=SUCCESS method=searchProduct.accessDashboard(java.lang.Strin...)</span>
-                <span class="method-start">68544 ms</span>
+                <span class="method-name">tearDown([TestResult name=accessDashboard status=FAILURE method=searchProduct.accessDashboard(java.lang.Strin...)</span>
+                <span class="method-start">302079 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownReport</span>
-                <span class="method-start">68710 ms</span>
+                <span class="method-start">302439 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

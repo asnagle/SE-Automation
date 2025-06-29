@@ -9,6 +9,7 @@ import pages.DashBoard;
 import utils.ExtentReportManager;
 import utils.Log;
 import utils.ValidateProductSearch;
+import utils.getSiteResponse;
 
 public class searchProduct extends BaseTest {
 
@@ -21,11 +22,12 @@ public class searchProduct extends BaseTest {
 
 	@Test(priority = 1, dataProvider = "Credentials")
 	public void accessDashboard(String username, String password) {
-		Log.info("Starting to Login with Valid Credentials...");
+		Log.info("Starting to Test Search Product by Name...");
 		testrep = ExtentReportManager.createTest("Search Product by Name");
+		testrep.info("Navigating to URL");
 		LoginPage loginPage = new LoginPage(driver);
 		DashBoard dashboard = new DashBoard(driver);
-		
+
 		Log.info("Providing Credentials..");
 		testrep.info("Providing Credentials...");
 		loginPage.enterUsername(username);
@@ -37,7 +39,6 @@ public class searchProduct extends BaseTest {
 		String ADMIN_TITLE = "Dashboard / nopCommerce administration";
 		String actualMsg = loginPage.loginStatus().trim().replaceAll("\\s+", " ");
 //		String Products = dashboard.productList().trim().replaceAll("\\s+"," ");
-		
 
 		getSiteResponse.validateLogin(driver, actualMsg, testrep);
 		System.out.println(actualMsg);
@@ -49,11 +50,11 @@ public class searchProduct extends BaseTest {
 			dashboard.searchButton();
 //			dashboard.productList();
 			ValidateProductSearch.productsFound(driver, actualMsg, testrep);
-        } else {
+		} else {
 //        	System.out.println("Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
-            testrep.fail("Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
-        }
-
+			testrep.fail(
+					"Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
+			getSiteResponse.throwFailure(actualMsg);
+		}
 	}
-
 }
