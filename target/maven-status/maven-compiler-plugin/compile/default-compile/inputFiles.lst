@@ -1,4 +1,12 @@
-C:\ASN\eclipse_workspace\se-automation\src\main\java\base\BaseTest.java
-C:\ASN\eclipse_workspace\se-automation\src\main\java\pages\LoginPage.java
-C:\ASN\eclipse_workspace\se-automation\src\main\java\utils\ExtentReportManager.java
-C:\ASN\eclipse_workspace\se-automation\src\main\java\utils\Log.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\base\BaseTest.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\emailSetup\EmailSender.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\pages\DashBoard.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\pages\LoginPage.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\baseUrl.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\EmailUtils.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\ExcelUtils.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\ExtentReportManager.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\getSiteResponse.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\Log.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\randomWait.java
+C:\ASN\eclipse_workspace\SE-Automation\src\main\java\utils\ValidateProductSearch.java

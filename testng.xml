@@ -9,7 +9,7 @@
 	</test>
 	<test name="searchProduct">
 		<classes>
-			<class name="tests.searchProduct" />
+			<class name="nopcommerce TestSuite.searchProduct" />
 		</classes>
 	</test>
 </suite>
