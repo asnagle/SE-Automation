@@ -1,4 +1,4 @@
-<suite name="LoginSuite">
+<suite name="nopcommerce TestSuite">
 	<test name="LoginTests">
 		<!--Passing parameters to test classes through testng.xml-->
 		<!--	<parameter name = "username" value = "puser1"/>-->

@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.Log;
+import utils.randomWait;
 
 public class DashBoard {
 
@@ -25,7 +26,6 @@ public class DashBoard {
 	@FindBy(xpath = "//nav/ul/li[2]/a")
 	WebElement catalog;
 
-//	@FindBy(xpath = "/html/body/div[3]/aside/div/nav/ul/li[2]/a/p")
 	@FindBy(xpath = "///li[2]/ul/li/a/p")
 	WebElement products;
 
@@ -55,12 +55,6 @@ public class DashBoard {
 
 	public void clickcatalog() {
 		Log.info("Clicking on Catalog tab in left navigation pane...");
-//		driver.get("https://admin-demo.nopcommerce.com/admin/");
-//	    driver.findElement(By.linkText("Catalog")).click();
-//	    driver.findElement(By.xpath("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Dashboard'])[2]/preceding::p[110]")).click();
-//	    catalog.click();
-//	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Clear cache'])[1]/following::p[3]")).click();
-//		driver.findElement(By.cssSelector("li.nav-item.has-treeview > a.nav-link")).click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.nav-item.has-treeview > a.nav-link")));
 		element.click();
@@ -72,8 +66,7 @@ public class DashBoard {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement productsSubmenu = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("li.nav-item > a.nav-link > p")));
-		productsSubmenu.click();
-//		products.click();
+		randomWait.delayClick(driver, productsSubmenu);
 	}
 
 	public void searchproductByName(String productName) {

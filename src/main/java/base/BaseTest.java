@@ -1,8 +1,12 @@
 package base;
+
 import java.io.File;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -40,16 +44,35 @@ public class BaseTest {
 
 	}
 
+//	@BeforeMethod
+//	public void setUp() {
+//
+//		Log.info("Starting Web Browser...");
+//		driver = new ChromeDriver();
+//		driver = new FirefoxDriver();
+//		driver.manage().window().maximize();
+	
+//	=============== Starting Browser in incognito mode and try to bypass Verification ===========
 	@BeforeMethod
 	public void setUp() {
 
 		Log.info("Starting Web Browser...");
-		driver = new ChromeDriver();
-//		driver = new FirefoxDriver();
-		driver.manage().window().maximize();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--incognito");  // ← This is the key!
+		options.addArguments("--start-maximized");
+		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+		options.setExperimentalOption("useAutomationExtension", false);
+		options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+				+ "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36");
+
+		driver = new ChromeDriver(options);
+
+		// 👻 JavaScript to hide 'webdriver' property
+		((JavascriptExecutor) driver)
+				.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
+
 		Log.info("Navigating to URL...");
 		driver.get("https://admin-demo.nopcommerce.com/login");
-
 	}
 
 	@AfterMethod

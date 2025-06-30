@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.getSiteResponse;
 import base.BaseTest;
@@ -9,7 +10,7 @@ import pages.DashBoard;
 import utils.ExtentReportManager;
 import utils.Log;
 import utils.ValidateProductSearch;
-import utils.getSiteResponse;
+//import utils.getSiteResponse;
 
 public class searchProduct extends BaseTest {
 
@@ -19,7 +20,7 @@ public class searchProduct extends BaseTest {
 
 		return new Object[][] { { "admin@yourstore.com", "admin" } };
 	}
-
+	@Parameters("baseUrl")
 	@Test(priority = 1, dataProvider = "Credentials")
 	public void accessDashboard(String username, String password) {
 		Log.info("Starting to Test Search Product by Name...");
@@ -51,7 +52,6 @@ public class searchProduct extends BaseTest {
 //			dashboard.productList();
 			ValidateProductSearch.productsFound(driver, actualMsg, testrep);
 		} else {
-//        	System.out.println("Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
 			testrep.fail(
 					"Login was either Unsuccessful / hit Human verification warning. Can't continue with the testing");
 			getSiteResponse.throwFailure(actualMsg);

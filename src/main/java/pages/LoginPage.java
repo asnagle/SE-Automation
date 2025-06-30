@@ -1,15 +1,19 @@
 package pages;
 
+//import java.time.Duration;
+//import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 //import org.openqa.selenium.By; // To be uncommented if you don't want to use PageFactory
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utils.Log;
+//import utils.getSiteResponse;
+import utils.randomWait;
 
 public class LoginPage {
 
@@ -66,8 +70,20 @@ public class LoginPage {
 
 	public void clickLogin() {
 		Log.info("Clicking on Login Button...");
-//		driver.findElement(loginButton).click();	// To be uncommented if you don't want to use PageFactory
-		loginButton.click();
+//		WebElement locator;
+		// driver.findElement(loginButton).click(); // To be uncommented if you don't
+		// want to use PageFactory
+//		loginButton.click();
+//		Actions actions = new Actions(driver);
+//		actions.moveToElement(loginButton).pause(Duration.ofMillis(700)).click().perform();
+//		try {
+//			Thread.sleep(800 + new Random().nextInt(800));
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		randomWait.delayClick(driver, loginButton);
+		
 	}
 
 	// Method to return login error message
@@ -108,6 +124,5 @@ public class LoginPage {
 		}
 
 	}
-	
-	
+
 }

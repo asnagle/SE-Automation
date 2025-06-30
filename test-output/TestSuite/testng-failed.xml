@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestSuite]">
+  <test thread-count="5" name="LoginTests(failed)">
+    <parameter name="baseUrl" value="https://admin-demo.nopcommerce.com/login "/>
+    <classes>
+      <class name="tests.LoginTests">
+        <methods>
+          <include name="teardownReport"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="invalidLogin"/>
+          <include name="validLogin"/>
+        </methods>
+      </class> <!-- tests.LoginTests -->
+    </classes>
+  </test> <!-- LoginTests(failed) -->
+  <test thread-count="5" name="searchProduct(failed)">
+    <parameter name="baseUrl" value="https://admin-demo.nopcommerce.com/admin "/>
+    <classes>
+      <class name="tests.searchProduct">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardownReport"/>
+          <include name="tearDown"/>
+          <include name="accessDashboard"/>
+          <include name="setupReport"/>
+        </methods>
+      </class> <!-- tests.searchProduct -->
+    </classes>
+  </test> <!-- searchProduct(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
