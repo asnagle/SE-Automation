@@ -1,6 +1,7 @@
 package base;
 
 import java.io.File;
+import java.util.Arrays;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -35,6 +36,8 @@ public class BaseTest {
 	public static void teardownReport() {
 		try {
 			extentRep.flush();
+			
+//			***** Uncomment to enable emailing report feature
 			File fullPath = new File(ExtentReportManager.reportPath);
 			String reportFolder = fullPath.getParent();
 			EmailUtils.sendTestReport(reportFolder);
@@ -60,6 +63,8 @@ public class BaseTest {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--incognito");  // ← This is the key!
 		options.addArguments("--start-maximized");
+		options.addArguments("--disable-blink-features=AutomationControlled");
+		options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
 		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 		options.setExperimentalOption("useAutomationExtension", false);
 		options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -72,12 +77,12 @@ public class BaseTest {
 				.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
 
 		Log.info("Navigating to URL...");
-		driver.get("https://admin-demo.nopcommerce.com/login");
+		driver.get("https://admin-demo.nopcommerce.com/admin");
 	}
 
 	@AfterMethod
 	public void tearDown(ITestResult result) {
-
+		
 		if (result.getStatus() == ITestResult.FAILURE) {
 			String screenshotPath = ExtentReportManager.captureScreenShot(driver, "LoginFailure");
 			testrep.fail("Test Failed... Check Screenshot",

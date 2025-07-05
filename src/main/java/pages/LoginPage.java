@@ -4,6 +4,7 @@ package pages;
 //import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 //import org.openqa.selenium.By; // To be uncommented if you don't want to use PageFactory
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Log;
 //import utils.getSiteResponse;
 import utils.randomWait;
+import utils.typeValues;
 
 public class LoginPage {
 
@@ -31,6 +33,7 @@ public class LoginPage {
 
 	@FindBy(xpath = "/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[1]")
 	WebElement loginError;
+	
 
 //	
 //	@FindBy(id = "xEqtR4")
@@ -54,18 +57,34 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterUsername(String username) {
+	public void enterUsername(String username) throws InterruptedException {
 //		driver.findElement(usernameTextBox).clear();	// To be uncommented if you don't want to use PageFactory
 //		driver.findElement(usernameTextBox).sendKeys(username);	// To be uncommented if you don't want to use PageFactory
-		usernameTextBox.clear();
-		usernameTextBox.sendKeys(username);
+		
+//		usernameTextBox.clear();
+		randomWait.delayClick(driver, usernameTextBox);
+		usernameTextBox.sendKeys(Keys.CONTROL + "a");
+		usernameTextBox.sendKeys(Keys.DELETE);
+		typeValues.enterChars(driver, usernameTextBox, username);
+//		usernameTextBox.click();
+//		usernameTextBox.sendKeys(username);
+		
 	}
 
 	public void enterPassword(String password) {
 //		driver.findElement(passwordTextBox).clear();	//// To be uncommented if you don't want to use PageFactory
 //		driver.findElement(passwordTextBox).sendKeys(password);	// To be uncommented if you don't want to use PageFactory
-		passwordTextBox.clear();
-		passwordTextBox.sendKeys(password);
+//		passwordTextBox.clear();
+		randomWait.delayClick(driver, passwordTextBox);
+		passwordTextBox.sendKeys(Keys.CONTROL + "a");
+		passwordTextBox.sendKeys(Keys.DELETE);
+//		passwordTextBox.sendKeys(password);
+		try {
+			typeValues.enterChars(driver, passwordTextBox, password);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void clickLogin() {
@@ -74,14 +93,6 @@ public class LoginPage {
 		// driver.findElement(loginButton).click(); // To be uncommented if you don't
 		// want to use PageFactory
 //		loginButton.click();
-//		Actions actions = new Actions(driver);
-//		actions.moveToElement(loginButton).pause(Duration.ofMillis(700)).click().perform();
-//		try {
-//			Thread.sleep(800 + new Random().nextInt(800));
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		randomWait.delayClick(driver, loginButton);
 		
 	}

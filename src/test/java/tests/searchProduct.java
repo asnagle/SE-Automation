@@ -31,7 +31,12 @@ public class searchProduct extends BaseTest {
 
 		Log.info("Providing Credentials..");
 		testrep.info("Providing Credentials...");
-		loginPage.enterUsername(username);
+		try {
+			loginPage.enterUsername(username);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		loginPage.enterPassword(password);
 		testrep.info("Clicking on Login Button");
 		loginPage.clickLogin();

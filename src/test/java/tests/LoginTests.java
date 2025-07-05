@@ -80,7 +80,12 @@ public class LoginTests extends BaseTest {
 
 		Log.info("Providing Credentials..");
 		testrep.info("Providing Credentials...");
-		loginPage.enterUsername(username);
+		try {
+			loginPage.enterUsername(username);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		loginPage.enterPassword(password);
 		testrep.info("Clicking on Login Button");
 		loginPage.clickLogin();
@@ -95,7 +100,7 @@ public class LoginTests extends BaseTest {
 
 //		=================== Old Validation Code =====================
 //		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
-////			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
 //			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
 //			Log.info("Test completed Successfully ");
 //			testrep.pass("Login Successful");
@@ -256,7 +261,12 @@ public class LoginTests extends BaseTest {
 
 		Log.info("Providing Credentials..");
 		testrep.info("Providing Credentials...");
-		loginPage.enterUsername(username);
+		try {
+			loginPage.enterUsername(username);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		loginPage.enterPassword(password);
 		testrep.info("Clicking on Login Button");
 		loginPage.clickLogin();
@@ -271,7 +281,7 @@ public class LoginTests extends BaseTest {
 
 //		============================= Old Validation Code =============================
 //		if ("Dashboard / nopCommerce administration".equals(pageTitle)) {
-////			Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
+//		Assert.assertEquals(driver.getTitle(), "Dashboard / nopCommerce administration");
 //			Assert.assertEquals(actualMsg, "Dashboard / nopCommerce administration");
 //			Log.info("Test completed Successfully ");
 //			testrep.fail("Valid Credentials Entered..");

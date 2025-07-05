@@ -1,48 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="7" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-30T17:59:02 IST" name="nopcommerce TestSuite" finished-at="2025-06-30T18:03:39 IST" duration-ms="277032">
+  <suite started-at="2025-07-05T08:03:08 IST" name="Default suite" finished-at="2025-07-05T08:03:26 IST" duration-ms="18262">
     <groups>
     </groups>
-    <test started-at="2025-06-30T17:59:02 IST" name="LoginTests" finished-at="2025-06-30T18:02:05 IST" duration-ms="183190">
-      <class name="tests.LoginTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T17:59:03 IST" name="setUp" finished-at="2025-06-30T17:59:07 IST" duration-ms="4328" status="PASS">
+    <test started-at="2025-07-05T08:03:08 IST" name="Default test" finished-at="2025-07-05T08:03:26 IST" duration-ms="18262">
+      <class name="tests.searchProduct">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:08 IST" name="setupReport" finished-at="2025-07-05T08:03:08 IST" duration-ms="276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupReport -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:08 IST" name="setUp" finished-at="2025-07-05T08:03:12 IST" duration-ms="3572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T17:59:07 IST" name="validLogin" data-provider="ValidLoginData" finished-at="2025-06-30T17:59:43 IST" duration-ms="36017" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@yourstore.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T17:59:43 IST" name="tearDown" finished-at="2025-06-30T17:59:43 IST" duration-ms="137" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T17:59:43 IST" name="setUp" finished-at="2025-06-30T18:00:09 IST" duration-ms="25514" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:00:09 IST" name="validLogin" data-provider="ValidLoginData" finished-at="2025-06-30T18:00:38 IST" duration-ms="29079" status="FAIL">
+        <test-method signature="accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:12 IST" name="accessDashboard" data-provider="Credentials" finished-at="2025-07-05T08:03:25 IST" duration-ms="12920" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -63,9 +36,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [88bccae1894cf792c23b7dca21892514, findElement {using=id, value=xEqtR4}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51183}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51183/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 88bccae1894cf792c23b7dca21892514]]>
+Command: [84ca89b976e4a5478f56f87342d3032b, findElement {value=xEqtR4, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 84ca89b976e4a5478f56f87342d3032b]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#xEqtR4"}
@@ -74,9 +47,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [88bccae1894cf792c23b7dca21892514, findElement {using=id, value=xEqtR4}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51183}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51183/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 88bccae1894cf792c23b7dca21892514
+Command: [84ca89b976e4a5478f56f87342d3032b, findElement {value=xEqtR4, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 84ca89b976e4a5478f56f87342d3032b
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -91,9 +64,9 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at pages.LoginPage.loginExceptions(LoginPage.java:119)
-at pages.LoginPage.loginStatus(LoginPage.java:97)
-at tests.LoginTests.validLogin(LoginTests.java:90)
+at pages.LoginPage.loginExceptions(LoginPage.java:130)
+at pages.LoginPage.loginStatus(LoginPage.java:108)
+at tests.searchProduct.accessDashboard(searchProduct.java:46)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -125,313 +98,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:00:38 IST" name="tearDown" finished-at="2025-06-30T18:00:38 IST" duration-ms="351" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validLogin status=FAILURE method=LoginTests.validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:00:38 IST" name="setUp" finished-at="2025-06-30T18:01:26 IST" duration-ms="47229" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:26 IST" name="validLogin" data-provider="ValidLoginData" finished-at="2025-06-30T18:01:30 IST" duration-ms="4682" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@yourstore.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:30 IST" name="tearDown" finished-at="2025-06-30T18:01:30 IST" duration-ms="152" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:30 IST" name="setUp" finished-at="2025-06-30T18:01:34 IST" duration-ms="3485" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:34 IST" name="validLogin" data-provider="ValidLoginData" finished-at="2025-06-30T18:01:39 IST" duration-ms="5066" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@yourstore.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:39 IST" name="tearDown" finished-at="2025-06-30T18:01:39 IST" duration-ms="214" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validLogin status=SUCCESS method=LoginTests.validLogin(java.lang.String,java.lang.String)[pri:1, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:39 IST" name="setUp" finished-at="2025-06-30T18:01:43 IST" duration-ms="3209" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:43 IST" name="invalidLogin" data-provider="InValidLoginData" finished-at="2025-06-30T18:01:46 IST" duration-ms="3255" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@yourstore.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass124]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:46 IST" name="tearDown" finished-at="2025-06-30T18:01:46 IST" duration-ms="144" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:46 IST" name="setUp" finished-at="2025-06-30T18:01:49 IST" duration-ms="3059" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:49 IST" name="invalidLogin" data-provider="InValidLoginData" finished-at="2025-06-30T18:01:53 IST" duration-ms="4432" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user1@test.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:53 IST" name="tearDown" finished-at="2025-06-30T18:01:54 IST" duration-ms="167" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:54 IST" name="setUp" finished-at="2025-06-30T18:01:56 IST" duration-ms="2257" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:56 IST" name="invalidLogin" data-provider="InValidLoginData" finished-at="2025-06-30T18:01:58 IST" duration-ms="2191" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user2@test.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass126]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:58 IST" name="tearDown" finished-at="2025-06-30T18:01:58 IST" duration-ms="166" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:01:58 IST" name="setUp" finished-at="2025-06-30T18:02:01 IST" duration-ms="2963" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:02:01 IST" name="invalidLogin" data-provider="InValidLoginData" finished-at="2025-06-30T18:02:05 IST" duration-ms="3848" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user3@test.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass321]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidLogin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.LoginTests@3cd3e762]" started-at="2025-06-30T18:02:05 IST" name="tearDown" finished-at="2025-06-30T18:02:05 IST" duration-ms="126" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidLogin status=SUCCESS method=LoginTests.invalidLogin(java.lang.String,java.lang.String)[pri:2, instance:tests.LoginTests@3cd3e762] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.LoginTests -->
-    </test> <!-- LoginTests -->
-    <test started-at="2025-06-30T18:02:05 IST" name="searchProduct" finished-at="2025-06-30T18:03:39 IST" duration-ms="93794">
-      <class name="tests.searchProduct">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:tests.searchProduct@bccb269]" started-at="2025-06-30T17:59:02 IST" name="setupReport" finished-at="2025-06-30T17:59:02 IST" duration-ms="220" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.searchProduct@bccb269]" started-at="2025-06-30T18:02:05 IST" name="setUp" finished-at="2025-06-30T18:02:09 IST" duration-ms="3612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@bccb269]" started-at="2025-06-30T18:02:09 IST" name="accessDashboard" data-provider="Credentials" finished-at="2025-06-30T18:03:39 IST" duration-ms="89733" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin@yourstore.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <a href="#" class="nav-link">...</a> is not clickable at point (125, 175). Other element would receive the click: <div id="loadCustomerStatisticsAlert-action-alert" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="loadCustomerStatisticsAlert-action-alert-title" aria-modal="true" style="display: block;">...</div>
-  (Session info: chrome=137.0.7151.120)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6f9d0dfb571f095c0be50fb22e5d4e75, clickElement {id=f.92A3EF1B250E9D4AA25FB429E5EA51BB.d.87BC689D3B2FBA4954094BA1845128B6.e.73}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51558}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51558/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (6f9d0dfb571f095c0be50fb22e5d4e75)] -> css selector: li.nav-item.has-treeview > a.nav-link]
-Session ID: 6f9d0dfb571f095c0be50fb22e5d4e75]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="#" class="nav-link">...</a> is not clickable at point (125, 175). Other element would receive the click: <div id="loadCustomerStatisticsAlert-action-alert" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="loadCustomerStatisticsAlert-action-alert-title" aria-modal="true" style="display: block;">...</div>
-  (Session info: chrome=137.0.7151.120)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6f9d0dfb571f095c0be50fb22e5d4e75, clickElement {id=f.92A3EF1B250E9D4AA25FB429E5EA51BB.d.87BC689D3B2FBA4954094BA1845128B6.e.73}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51558}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51558/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (6f9d0dfb571f095c0be50fb22e5d4e75)] -> css selector: li.nav-item.has-treeview > a.nav-link]
-Session ID: 6f9d0dfb571f095c0be50fb22e5d4e75
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at pages.DashBoard.clickcatalog(DashBoard.java:60)
-at tests.searchProduct.accessDashboard(searchProduct.java:48)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- accessDashboard -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.searchProduct@bccb269]" started-at="2025-06-30T18:03:39 IST" name="tearDown" finished-at="2025-06-30T18:03:39 IST" duration-ms="439" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:25 IST" name="tearDown" finished-at="2025-07-05T08:03:26 IST" duration-ms="1696" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=accessDashboard status=FAILURE method=searchProduct.accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@bccb269] output={null}]]]>
+                <![CDATA[[TestResult name=accessDashboard status=FAILURE method=searchProduct.accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@40005471] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:tests.searchProduct@bccb269]" started-at="2025-06-30T18:03:39 IST" name="teardownReport" finished-at="2025-06-30T18:03:46 IST" duration-ms="6540" status="PASS">
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:26 IST" name="teardownReport" finished-at="2025-07-05T08:03:34 IST" duration-ms="7550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
       </class> <!-- tests.searchProduct -->
-    </test> <!-- searchProduct -->
-  </suite> <!-- nopcommerce TestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -63,9 +63,10 @@ public class DashBoard {
 	public void clickproducts() {
 
 		Log.info("Clicking on Products tab in left navigation pane...");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		WebElement productsSubmenu = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("li.nav-item > a.nav-link > p")));
+		System.out.println(productsSubmenu.getText());
 		randomWait.delayClick(driver, productsSubmenu);
 	}
 
@@ -73,8 +74,12 @@ public class DashBoard {
 		WebElement productEl = waitforPage(By.id("SearchProductName"));
 		System.out.println(productEl);
 		Log.info("Clicking on Search Products By Name...");
-		SearchProductName.click();
-		SearchProductName.sendKeys(productName);
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebElement productE1 = wait2.until(ExpectedConditions.elementToBeClickable(SearchProductName));
+		System.out.println(productE1.getText());
+		randomWait.delayClick(driver, productE1);
+//		SearchProductName.click();
+//		SearchProductName.sendKeys(productName);
 	}
 
 	public void searchButton() {
@@ -93,13 +98,13 @@ public class DashBoard {
 		
 		
 
-////	=================== Under development ================
+//	=================== Under development ================
 //	public void exportproductList() {
-////		WebElement product = driver.findElement(By.partialLinkText("Nikon"));
-////		String productName = product.getText();
-////		System.out.println(productName);
-//////		if(product )
-////		return products;
+//		WebElement product = driver.findElement(By.partialLinkText("Nikon"));
+//		String productName = product.getText();
+//		System.out.println(productName);
+//		if(product )
+//		return products;
 //		List<WebElement> rows = driver.findElements(By.cssSelector("table tr"));
 //
 //		try (BufferedWriter writer = new BufferedWriter(new FileWriter("products.txt"))) {

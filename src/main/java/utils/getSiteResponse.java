@@ -6,9 +6,10 @@ import com.aventstack.extentreports.ExtentTest;
 
 
 public class getSiteResponse {
-	
 	public static void validateLogin(WebDriver driver, String actualMsg, ExtentTest testrep) {
-        String pageTitle = driver.getTitle();
+		
+		
+		String pageTitle = driver.getTitle();
 
         String ADMIN_TITLE = "Dashboard / nopCommerce administration";
         String WAIT_TITLE = "Just a moment...";
