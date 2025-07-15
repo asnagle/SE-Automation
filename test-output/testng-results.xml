@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-05T08:03:08 IST" name="Default suite" finished-at="2025-07-05T08:03:26 IST" duration-ms="18262">
+  <suite started-at="2025-07-09T08:40:56 IST" name="Default suite" finished-at="2025-07-09T08:41:14 IST" duration-ms="18294">
     <groups>
     </groups>
-    <test started-at="2025-07-05T08:03:08 IST" name="Default test" finished-at="2025-07-05T08:03:26 IST" duration-ms="18262">
+    <test started-at="2025-07-09T08:40:56 IST" name="Default test" finished-at="2025-07-09T08:41:14 IST" duration-ms="18294">
       <class name="tests.searchProduct">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:08 IST" name="setupReport" finished-at="2025-07-05T08:03:08 IST" duration-ms="276" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-09T08:40:55 IST" name="setupReport" finished-at="2025-07-09T08:40:56 IST" duration-ms="330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:08 IST" name="setUp" finished-at="2025-07-05T08:03:12 IST" duration-ms="3572" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-09T08:40:56 IST" name="setUp" finished-at="2025-07-09T08:41:00 IST" duration-ms="4310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:12 IST" name="accessDashboard" data-provider="Credentials" finished-at="2025-07-05T08:03:25 IST" duration-ms="12920" status="FAIL">
+        <test-method signature="accessDashboard(java.lang.String,java.lang.String)[pri:1, instance:tests.searchProduct@40005471]" started-at="2025-07-09T08:41:00 IST" name="accessDashboard" data-provider="Credentials" finished-at="2025-07-09T08:41:13 IST" duration-ms="12566" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -36,9 +36,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [84ca89b976e4a5478f56f87342d3032b, findElement {value=xEqtR4, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 84ca89b976e4a5478f56f87342d3032b]]>
+Command: [1a65df81712d1801b148c0561df9c71d, findElement {using=id, value=xEqtR4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52419}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52419/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1a65df81712d1801b148c0561df9c71d]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#xEqtR4"}
@@ -47,9 +47,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [84ca89b976e4a5478f56f87342d3032b, findElement {value=xEqtR4, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51208}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51208/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 84ca89b976e4a5478f56f87342d3032b
+Command: [1a65df81712d1801b148c0561df9c71d, findElement {using=id, value=xEqtR4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52419}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52419/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1a65df81712d1801b148c0561df9c71d
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -99,7 +99,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessDashboard -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:25 IST" name="tearDown" finished-at="2025-07-05T08:03:26 IST" duration-ms="1696" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-09T08:41:13 IST" name="tearDown" finished-at="2025-07-09T08:41:14 IST" duration-ms="1371" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -110,7 +110,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-05T08:03:26 IST" name="teardownReport" finished-at="2025-07-05T08:03:34 IST" duration-ms="7550" status="PASS">
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:tests.searchProduct@40005471]" started-at="2025-07-09T08:41:14 IST" name="teardownReport" finished-at="2025-07-09T08:41:21 IST" duration-ms="7065" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
