@@ -61,9 +61,7 @@ public class EmailUtils {
 				Message message = new MimeMessage(session);
 				message.setFrom(new InternetAddress(emailSender));
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailRecepient));
-				message.setSubject("Selenium Automation Test Reports.");
-//					message.setText("Hello \nThis is a test email from Java Selenium Automation Code\n\n\nRegards,\n\nQA Team");
-//					messate.setText is commented as we are composing email body with attachment in below Code. this was added for testing email send.
+				message.setSubject("nopcommerce - Selenium Automation Test Reports.");
 
 				MimeBodyPart emailBody = new MimeBodyPart();
 				emailBody.setText(
@@ -72,8 +70,6 @@ public class EmailUtils {
 //					Email Attachments
 
 				MimeBodyPart emailAttachment = new MimeBodyPart();
-//					String filePath = System.getProperty("user.dir") + "/reports/ExtentReport.html";
-//					String filePath = getLatestReportFile(ReportPath);
 				System.out.println("Attachment fie is in following folder: " + ReportPath);
 				emailAttachment.attachFile(reportFile);
 

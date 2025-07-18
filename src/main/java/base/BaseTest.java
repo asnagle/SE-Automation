@@ -36,7 +36,7 @@ public class BaseTest {
 	public static void teardownReport() {
 		try {
 			extentRep.flush();
-			
+
 //			***** Uncomment to enable emailing report feature
 			File fullPath = new File(ExtentReportManager.reportPath);
 			String reportFolder = fullPath.getParent();
@@ -54,14 +54,14 @@ public class BaseTest {
 //		driver = new ChromeDriver();
 //		driver = new FirefoxDriver();
 //		driver.manage().window().maximize();
-	
+
 //	=============== Starting Browser in incognito mode and try to bypass Verification ===========
 	@BeforeMethod
 	public void setUp() {
 
 		Log.info("Starting Web Browser...");
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--incognito");  // ← This is the key!
+		options.addArguments("--incognito"); // ← This is the key!
 		options.addArguments("--start-maximized");
 		options.addArguments("--disable-blink-features=AutomationControlled");
 		options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
@@ -82,7 +82,7 @@ public class BaseTest {
 
 	@AfterMethod
 	public void tearDown(ITestResult result) {
-		
+
 		if (result.getStatus() == ITestResult.FAILURE) {
 			String screenshotPath = ExtentReportManager.captureScreenShot(driver, "LoginFailure");
 			testrep.fail("Test Failed... Check Screenshot",
